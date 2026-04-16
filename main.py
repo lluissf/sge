@@ -2,13 +2,10 @@
     Sistema de Gestão de Estoque.
     Desenvolvido por: @lluissf
 """
-from functions import listar_produtos, adicionar_produto, remover_produto
+
+from functions import listar_produtos, adicionar_produto, remover_produto, carregar_dados, salvar_dados
 # Criando os produtos
-produtos = [
-    {"id": 1, "nome": "Teclado Gamer", "preco": 100.29, "quantidade": 1},
-    {"id": 2, "nome": "Mouse Gamer", "preco": 76, "quantidade": 2},
-    {"id": 3, "nome": "Headset Gamer", "preco": 70.3, "quantidade": 10}
-]
+produtos = carregar_dados()
 
 # Criando o Menu.
 while True:
@@ -28,8 +25,10 @@ while True:
             listar_produtos(produtos)
         case 2:
             adicionar_produto(produtos)
+            salvar_dados(produtos)
         case 3:
             remover_produto(produtos)
+            salvar_dados(produtos)
         case _:
             print("Opção inválida!")
 
