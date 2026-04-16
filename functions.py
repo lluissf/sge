@@ -6,6 +6,7 @@ def listar_produtos(produtos):
     for i in produtos:
         print(f"{i['id']:<4} | {i['nome']:<15} | R${i['preco']:>8.2f} | {i['quantidade']:>5}")
     print("-" * 50)
+
 def adicionar_produto(produtos):
     """
     Adicionando um novo produto a lista..
@@ -19,3 +20,19 @@ def adicionar_produto(produtos):
         produtos.append(novo_produto)
     except:
         print(f"Ocorreu algum erro.")
+
+def remover_produto(produtos):
+    """
+    Remover produto da lista. (ID)
+    """
+    listar_produtos(produtos)
+    id_produto = int(input("Insira o (ID) do Produto que deseja remover: "))
+    encontrado = False
+    for i in produtos:
+        if i['id'] == id_produto:
+            print(f"O Produto {i["nome"]} foi removido com sucesso.")
+            produtos.remove(i)
+            encontrado = True
+            break
+    if not encontrado:
+        print(f"Não encontrei o Produto com o ID: {id_produto}.") 
