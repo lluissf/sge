@@ -1,6 +1,21 @@
 def listar_produtos(produtos):
-    """
-    Estamos listando somente o nome do produto por enquanto.
-    """
+    print("-" * 50)
+    print(f"{'ID':<4} | {'Nome':<15} | {'Preço':>10} | {'Qtd':>5}")
+    print("-" * 50)
+    
     for i in produtos:
-        print(f"{i["nome"]}")
+        print(f"{i['id']:<4} | {i['nome']:<15} | R${i['preco']:>8.2f} | {i['quantidade']:>5}")
+    print("-" * 50)
+def adicionar_produto(produtos):
+    """
+    Adicionando um novo produto a lista..
+    """
+    try:
+        id = max(produto["id"] for produto in produtos) + 1
+        nome = input("Insira o nome do Produto: ")
+        preco = float(input("Insira o preço do Produto: "))
+        quantidade = int(input("Forneça a quantidade do Produto: "))
+        novo_produto = {"id": id, "nome": nome, "preco": preco, "quantidade": quantidade }
+        produtos.append(novo_produto)
+    except:
+        print(f"Ocorreu algum erro.")

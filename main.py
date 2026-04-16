@@ -2,7 +2,7 @@
     Sistema de Gestão de Estoque.
     Desenvolvido por: @lluissf
 """
-from functions import listar_produtos
+from functions import listar_produtos, adicionar_produto
 # Criando os produtos
 produtos = [
     {"id": 1, "nome": "Teclado Gamer", "preco": 100.29, "quantidade": 1},
@@ -26,6 +26,6 @@ while True:
         case 1:
             listar_produtos(produtos)
         case 2:
-            print(f"Adicionar produto.")
+            adicionar_produto(produtos)
 
 print(f"Programa Encerrado.")
