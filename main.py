@@ -14,7 +14,8 @@ produtos = [
 while True:
     print(f"===================\n")
     print(f"1. Listar Produtos.\n")
-    print(f"0. Sair do Programa.\n")
+    print(f"2. Adicionar Produto.\n")
+    print(f"\n0. Sair do Programa.\n")
     print(f"===================\n")
 
     opcao = int(input("Insira o número: "))
@@ -24,5 +25,7 @@ while True:
             break
         case 1:
             listar_produtos(produtos)
+        case 2:
+            print(f"Adicionar produto.")
 
 print(f"Programa Encerrado.")
